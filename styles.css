@@ -1,18 +1,4 @@
 @font-face {
-    font-family: 'Heading36';
-    src: url('fonts/HeadingNowTrial-36Bold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Heading66';
-    src: url('fonts/HeadingNowTrial-66Bold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
     font-family: 'BlackRavens';
     src: url('fonts/BlackRavens.ttf') format('truetype');
     font-weight: normal;
@@ -20,8 +6,6 @@
 }
 
 :root {
-    --fontePrincipal: 'Heading66', sans-serif;
-    --fonteSecundaria: 'Heading36', sans-serif;
     --fonteTerciaria: "Anton", sans-serif;
     --fonteQuaternaria: "BlackRavens", sans-serif;
 }
@@ -259,7 +243,7 @@ button:hover, .navButtons:hover, .icone-wpp:hover, .icone-instagram:hover {
 }
 
 .copyContainer {
-    font-family: var(--fontePrincipal);
+    font-family: var(--fonteTerciaria);
 }
 
 .camisetasImg {
@@ -464,8 +448,8 @@ button:hover, .navButtons:hover, .icone-wpp:hover, .icone-instagram:hover {
 
 @media (max-width: 930px) {
     .texto-principal {
-        font-family: var(--fontePrincipal);
-        font-size: 40px;
+        font-family: var(--fonteQuaternaria);
+        font-size: 62px;
     }
 
     .botao-inscricao, .botao-contato {
@@ -512,7 +496,7 @@ button:hover, .navButtons:hover, .icone-wpp:hover, .icone-instagram:hover {
     }
 
     .titulo-faq {
-        font-size: 40px;
+        font-size: 62px;
     }
 
     .panel-title {
@@ -598,8 +582,8 @@ button:hover, .navButtons:hover, .icone-wpp:hover, .icone-instagram:hover {
 
 @media (max-width: 350px) {
     .texto-principal {
-        font-family: var(--fontePrincipal);
-        font-size: 32px;
+        font-family: var(--fonteQuaternaria);
+        font-size: 50px;
     }
 
     .botao-inscricao, .botao-contato {
@@ -643,7 +627,7 @@ button:hover, .navButtons:hover, .icone-wpp:hover, .icone-instagram:hover {
     }
 
     .titulo-faq {
-        font-size: 32px;
+        font-size: 50px;
     }
 
     .panel-title {
