@@ -1,0 +1,656 @@
+@font-face {
+    font-family: 'Heading36';
+    src: url('fonts/HeadingNowTrial-36Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Heading66';
+    src: url('fonts/HeadingNowTrial-66Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BlackRavens';
+    src: url('fonts/BlackRavens.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --fontePrincipal: 'Heading66', sans-serif;
+    --fonteSecundaria: 'Heading36', sans-serif;
+    --fonteTerciaria: "Anton", sans-serif;
+    --fonteQuaternaria: "BlackRavens", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*body, html {
+     background-image: url('Fundo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100vw;
+    position: relative;
+} */
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Fundo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.content {
+    position: relative;
+    z-index: 1; /* Conteúdo fica acima do fundo */
+}
+
+.botao-inscricao, .botao-contato {
+    background-color: #5FC700;
+    width: 342px;
+    height: 96px;
+    border-radius: 20px;
+    color: #000;
+    font-family: var(--fonteTerciaria);
+    font-size: 36px;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover, .navButtons:hover, .icone-wpp:hover, .icone-instagram:hover {
+    transform: scale(1.05);
+}
+
+.texto-principal {
+    font-family: var(--fonteQuaternaria);
+    font-size: 88px;
+    color: #000;
+    overflow-y: hidden;
+}
+
+.containers {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
+    column-gap: 128px;
+    row-gap: 24px;
+    margin-top: 120px;
+    padding: 20px;
+}
+
+#home-container {    
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
+    width: 100%;
+    column-gap: 24px;
+    margin-top: 60px;
+    padding: 20px;
+}
+
+#home-container img {
+    grid-column: 1 / 2;
+    width: 100%;
+    height: 100% / 2;
+    max-width: 700px;
+    max-height: 700px;
+    border-radius: 60px;
+    /* border: 5px solid #6C2B2F; */
+    align-self: center;
+    justify-self: end;
+}
+
+.realize-inscricao {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2vw;
+    width: 100%;
+}
+
+#home-container p {
+    max-width: 500px;
+    text-align: center;
+}
+
+/* #sobre-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
+    column-gap: 128px;
+    row-gap: 24px;
+    margin-top: 140px;
+    padding: 20px;
+} */
+
+#sobre-container .texto-principal {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+#navegacao-buttons {
+    grid-column: 1 / 2;
+    border-bottom: 3px solid #5FC700;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 600px;
+    justify-self: end;
+    height: 40px;
+    overflow-y: hidden;
+    /* background-color: #6C2B2F;
+    border-radius: 20px; */
+}
+
+.selected-label {
+    color: #5FC700;
+}
+
+#navegacao-buttons:not(.selected-label) {
+    color: #fff;
+}
+
+#navegacao-buttons label {
+    background-color: transparent;
+    cursor: pointer;
+    font-family: var(--fonteTerciaria);
+    font-size: 28px;
+    border: none;
+    transition: .1s;
+    height: fit-content;
+    /* padding: 10px; */
+}
+
+#navegacao-buttons label + label {
+    margin-left: 10px;
+}
+
+.posts-instagram {
+    grid-column: 1 / 2;
+    grid-row: span 2;
+    border-radius: 60px;
+    max-width: 600px;
+    max-height: 600px;
+    height: 100% / 2;
+    width: 100%;
+    justify-self: end;
+}
+
+.panel-insta {
+    display: none;
+}
+
+.panel-insta:checked ~ .carousel{
+    display: block;
+}
+
+.carousel {
+    display: none;
+}
+
+#sobre-container .sobre-achaivos {
+    grid-column: 2 / 3;
+    font-family: var(--fonteTerciaria);
+    font-size: 30px;
+    max-width: 600px;
+    text-align: justify;
+    color: #000;
+}
+
+#sobre-container button {
+    grid-column: 2 / 3;
+    align-self: center;
+    justify-self: start;
+}
+
+/* #doacoes-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
+    column-gap: 128px;
+    row-gap: 24px;
+    margin-top: 140px;
+    padding: 20px;
+} */
+
+
+#doacoes-container .texto-principal, #camisetas-container .texto-principal {
+    grid-column: 1 / 3;
+    text-align: center;
+}
+
+.informacoes-doacao {
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-end;
+    justify-content: space-evenly;
+    max-width: 600px;
+    align-items: center;
+    overflow-y: hidden;
+}
+
+#copyDoacao, .copyContainer{
+    grid-column: 1 / 2;
+    text-align: center;
+    font-family: var(--fonteTerciaria);
+    font-size: 36px;
+    color: #000;
+}
+
+.copyContainer {
+    font-family: var(--fontePrincipal);
+}
+
+.camisetasImg {
+    grid-column: 2 / 3;
+    max-width: 500px;
+    max-height: 500px;
+    width: 100%;
+    height: 100% / 2;
+    background-color: #FFF;
+    border-radius: 10px;
+}
+
+#chavePix, .copyInfoContainer {
+    grid-column: 1 / 2;
+    text-align: center;
+    font-family: var(--fonteTerciaria);
+    text-align: center;
+    font-size: 36px;
+    color: #5FC700;
+}
+
+#qrcodepix {
+    grid-column: 2 / 3;
+    max-width: 350px;
+    max-height: 350px;
+    width: 100%;
+    height: 100% / 2;
+    background-color: #FFF;
+}
+
+#contato-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+    margin-top: 140px;
+    padding: 20px;
+}
+
+#contato-container .texto-principal {
+    grid-row: 1;
+    text-align: center;
+}
+
+#copyContato {
+    grid-row: 2;
+    text-align: center;
+    font-family: var(--fonteTerciaria);
+    font-size: 36px;
+    color: #000;
+}
+
+.botoes-contato {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    height: 120px;
+}
+
+.botao-redesocial {
+    background-color: #fff;
+    width: 98px;
+    height: 98px;
+    border-radius: 20px;
+    transition: .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 56px;
+    overflow-y: hidden;
+}
+
+.botao-redesocial i {
+    overflow-y: hidden;
+}
+
+#contato-container button {
+    grid-row: 3;
+    align-self: center;
+    justify-self: center;
+}
+
+#faq-container {
+    margin: 0 auto;
+    margin-top: 140px;
+    background-color: #5FC700;
+    color: #000;
+}
+
+.titulo-faq {
+    font-family: var(--fonteQuaternaria);
+    font-size: 88px;
+    text-align: center;
+    padding: 24px;
+}
+
+.pergunta-faq {
+    padding: 20px 0;
+    border-bottom: 3px solid #000;
+}
+
+.panel-title {
+    font-size: 36px;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 10px 10px 0 100px;
+    display: block;
+    cursor: pointer;
+    font-family: var(--fonteTerciaria);
+}
+
+.panel-content {
+    font-size: 30px;
+    padding: 0px 14px;
+    margin: 0 100px;
+    height: 0;
+    overflow: hidden;
+    z-index: -1;
+    position: relative;
+    opacity: 0;
+    -webkit-transition: .4s ease;
+    -moz-transition: .4s ease;
+    -o-transition: .4s ease;
+    transition: .4s ease;
+    font-family: var(--fonteTerciaria);
+}
+
+.panel:checked ~ .panel-content{
+    height: auto;
+    opacity: 1;
+    padding: 24px 0px;
+    z-index: 0;
+}
+
+.mais {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 4px;
+    z-index: 5;
+    font-size: 64px;
+    line-height: 100%;
+    -webkit-user-select: none;    
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-transition: .2s ease;
+    -moz-transition: .2s ease;
+    -o-transition: .2s ease;
+    transition: .2s ease;
+    overflow-y: hidden;
+}
+
+.panel:checked ~ .mais {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+  
+.panel {
+    display: none;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #5FC700 ;
+    top: calc(50% - 25px);
+    opacity: .8;
+}
+
+.carousel-control-prev{
+    left: 2%;
+}
+
+.carousel-control-next{
+    right: 2%;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #D5D5D2;
+    }
+}
+
+@media (max-width:1400px) {
+
+    .containers {
+        column-gap: 40px;
+    }
+
+    #navegacao-buttons button {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 930px) {
+    .texto-principal {
+        font-family: var(--fontePrincipal);
+        font-size: 40px;
+    }
+
+    .botao-inscricao, .botao-contato {
+        width: 250px;
+        height: 60px;
+        font-size: 24px;
+    }
+    
+    #navegacao-buttons button {
+        font-size: 16px;
+    }
+
+    #sobre-container .sobre-achaivos {
+        font-size: 20px;
+    }
+
+    #qrcodepix {
+        max-width: 200px;
+        max-height: 200px;
+    }
+
+    .camisetasImg {
+        max-width: 300px;
+        max-height: 300px;
+    }
+
+    #copyDoacao, .copyContainer{
+        font-size: 28px;    
+    }
+    
+    #chavePix, .copyInfoContainer {
+        font-size: 24px;
+    }
+
+    .botao-redesocial {
+        width: 60px;
+        height: 60px;
+        font-size: 40px;
+        padding: 10px;
+    }
+
+    #copyContato {
+        font-size: 28px;
+    }
+
+    .titulo-faq {
+        font-size: 40px;
+    }
+
+    .panel-title {
+        font-size: 24px;
+    }
+
+    .panel-content {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 680px) {
+    .containers {
+        column-gap: 16px;
+    }
+}
+
+@media (max-width: 650px) {
+    #home-container {
+        grid-template-columns: 1fr;
+        margin-top: 30px;
+    }
+
+    #home-container p {
+        margin-bottom: 30px;
+    }
+
+    .containers {
+        grid-template-columns: 1fr;
+        column-gap: 0px;
+    }
+
+    #sobre-container .sobre-achaivos {
+        grid-column: 1;
+    }
+
+    #sobre-container button {
+        grid-column: 1;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .informacoes-doacao {
+        justify-self: center;
+    }
+
+    #copyDoacao, .copyContainer{
+        font-size: 28px;    
+    }
+    
+    #chavePix, .copyInfoContainer {
+        font-size: 28px;
+    }
+
+    #qrcodepix {
+        grid-column: 1;
+        max-width: 350px;
+        max-height: 350px;
+        justify-self: center;
+    }
+
+    .camisetasImg {
+        grid-column: 1;
+        max-width: 500px;
+        max-height: 500px;
+        justify-self: center;
+    }
+
+    .botao-redesocial {
+        font-size: 28px;
+    }
+
+    #contato-container .botao-inscricao, .botao-contato {
+        width: 150px;
+        font-size: 20px;
+    }
+
+    .botoes-contato {
+        gap: 12px;
+    }
+}
+
+
+@media (max-width: 350px) {
+    .texto-principal {
+        font-family: var(--fontePrincipal);
+        font-size: 32px;
+    }
+
+    .botao-inscricao, .botao-contato {
+        width: 200px;
+        height: 60px;
+        font-size: 24px;
+    }
+
+    #copyDoacao, .copyContainer{
+        font-size: 24px;    
+    }
+    
+    #chavePix, .copyInfoContainer {
+        font-size: 24px;
+    }
+
+    #qrcodepix {
+        grid-column: 1;
+        max-width: 200px;
+        max-height: 200px;
+    }
+
+    .camisetasImg {
+        max-width: 300px;
+        max-height: 300px;
+    }
+
+    .botoes-contato {
+        gap: 12px;
+    }
+
+    #contato-container .botao-inscricao, .botao-contato {
+        width: 120px;
+        font-size: 24px;
+    }
+
+    #copyContato {
+        display: flex;
+        word-wrap: break-word;
+        font-size: 24px;
+    }
+
+    .titulo-faq {
+        font-size: 32px;
+    }
+
+    .panel-title {
+        padding-left: 70px;
+    }
+
+    .panel-content {
+        margin: 30px;
+    }
+}
