@@ -98,7 +98,7 @@ button:hover, .navButtons:hover, .icone-wpp:hover, .icone-instagram:hover {
     height: 100% / 2;
     max-width: 700px;
     max-height: 700px;
-    border-radius: 60px;
+    border-radius: 30px;
     /* border: 5px solid #6C2B2F; */
     align-self: center;
     justify-self: end;
@@ -173,7 +173,7 @@ button:hover, .navButtons:hover, .icone-wpp:hover, .icone-instagram:hover {
 .posts-instagram {
     grid-column: 1 / 2;
     grid-row: span 2;
-    border-radius: 60px;
+    border-radius: 30px;
     max-width: 600px;
     max-height: 600px;
     height: 100% / 2;
@@ -253,7 +253,7 @@ button:hover, .navButtons:hover, .icone-wpp:hover, .icone-instagram:hover {
     width: 100%;
     height: 100% / 2;
     background-color: #FFF;
-    border-radius: 10px;
+    border-radius: 30px;
 }
 
 #chavePix, .copyInfoContainer {
