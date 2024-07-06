@@ -485,9 +485,9 @@ button:hover, .navButtons:hover, .icone-wpp:hover, .icone-instagram:hover {
     }
 
     .botao-redesocial {
-        width: 60px;
-        height: 60px;
-        font-size: 40px;
+        width: 90px;
+        height: 90px;
+        font-size: 50px;
         padding: 10px;
     }
 
@@ -566,13 +566,13 @@ button:hover, .navButtons:hover, .icone-wpp:hover, .icone-instagram:hover {
     }
 
     .botao-redesocial {
-        font-size: 28px;
+        font-size: 50px;
     }
 
-    #contato-container .botao-inscricao, .botao-contato {
+    /* #contato-container .botao-inscricao, .botao-contato {
         width: 150px;
         font-size: 20px;
-    }
+    } */
 
     .botoes-contato {
         gap: 12px;
@@ -613,6 +613,12 @@ button:hover, .navButtons:hover, .icone-wpp:hover, .icone-instagram:hover {
 
     .botoes-contato {
         gap: 12px;
+    }
+
+    .botao-redesocial {
+        width: 60px;
+        height: 60px;
+        font-size: 32px;
     }
 
     #contato-container .botao-inscricao, .botao-contato {
