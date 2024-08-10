@@ -16,7 +16,7 @@
   <div class="background"></div>
   <div class="content">
       <section id="home-container">
-          <img src="SaveTheDate.jpg" alt="Save the Date Incendeia">
+          <img src="ArteOficial.jpeg" alt="Save the Date Incendeia">
           <div class="realize-inscricao">
               <p class="texto-principal">Realize já <br>
                 a sua inscrição
@@ -244,6 +244,10 @@
 </body>
 
 <script>
+
+import { injectSpeedInsights } from '@vercel/speed-insights';
+
+injectSpeedInsights();
 
   document.querySelector('.icone-wpp').onclick = function() {
       window.open('https://api.whatsapp.com/send?phone=5511953655416', "_blank");
